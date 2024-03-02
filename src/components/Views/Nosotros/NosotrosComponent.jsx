@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer'
 export const NosotrosComponent = () => {
     const { ref, inView } = useInView({
         triggerOnce: true, // Para que la animación ocurra solo una vez
-        threshold: 0.3, // Umbral de visibilidad (0.5 significa que cuando el 50% del div esté visible)
+        threshold: 0.2, // Umbral de visibilidad (0.5 significa que cuando el 50% del div esté visible)
     })
     return (
         <motion.div

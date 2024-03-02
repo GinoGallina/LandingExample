@@ -43,7 +43,6 @@ export const InicioComponent = () => {
                             className="d-inline-block"
                             initial={{ scale: 1.6 }} // Estado inicial fuera de la pantalla y opacidad 0
                             animate={{ scale: 1 }} // Animación de subida y aparición al estar en pantalla
-                            // transition={{ duration: 1, ease: 'easeOut' }} // Duración y tipo de transición
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                             transition={{

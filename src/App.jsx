@@ -5,6 +5,8 @@ import { InicioComponent } from './components/Views/Inicio/InicioComponent'
 import { ReparacionesComponent } from './components/Views/Reparaciones/ReparacionesComponent'
 import { AccesoriosComponent } from './components/Views/Accesorios/AccesoriosComponent'
 import { NosotrosComponent } from './components/Views/Nosotros/NosotrosComponent'
+import { ContactoComponent } from './components/Views/Contacto/ContactoComponent'
+import { GoodbyeComponent } from './components/Views/Goodbye/GoodbyeComponent'
 
 function App() {
     return (
@@ -17,7 +19,9 @@ function App() {
                 <ReparacionesComponent></ReparacionesComponent>
                 <NosotrosComponent></NosotrosComponent>
                 <AccesoriosComponent></AccesoriosComponent>
+                <GoodbyeComponent></GoodbyeComponent>
                 <div style={{ height: '100vh' }}></div>
+                <ContactoComponent></ContactoComponent>
             </main>
         </>
     )
