@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 
 export const GoodbyeComponent = () => {
@@ -5,22 +6,18 @@ export const GoodbyeComponent = () => {
         <div className="col-12 d-flex mt-5">
             <motion.div
                 className="col-4 text-center"
-                initial={{ clipPath: 'circle(0%)' }} // Inicialmente con clipPath 0
+                initial={{ scaleX: 1, scaleY: 0 }} // Inicialmente con clipPath 0
                 animate={{}} // Animación para expandir
-                transition={{ duration: 3, ease: 'easeInOut' }} // Duración y tipo de transición
+                transition={{ duration: 0.5, ease: 'easeInOut' }} // Duración y tipo de transición
                 whileInView={{
-                    clipPath: 'circle(100%)',
+                    scaleX: 1,
+                    scaleY: 1,
                 }}
-                // transition={{
-                //     duration: 1,
-                //     type: 'spring',
-                //     damping: 10,
-                //     stiffness: 100,
-                //     delay: 1,
-                // }}
                 viewport={{ once: true }}
             >
-                <h1>Holas</h1>
+                <Typography variant="h3">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                </Typography>
             </motion.div>
             <div className="col-4">
                 <motion.div
@@ -38,13 +35,13 @@ export const GoodbyeComponent = () => {
                     <button> aaa</button>
                 </motion.div>
             </div>
-            <div className="col-4 d-flex ">
-                <motion.button
-                    className="mx-auto btn btn-success"
+            <div className="col-4" style={{ backgroundColor: 'purple' }}>
+                <motion.div
+                    style={{ width: '200px', height: '200px' }}
+                    className=""
                     whileInView={{
                         scale: [1, 2, 2, 1, 1],
                         rotate: [0, 0, 270, 270, 0],
-                        borderRadius: ['20%', '20%', '50%', '50%', '20%'],
                     }}
                     transition={{
                         duration: 2,
@@ -52,14 +49,9 @@ export const GoodbyeComponent = () => {
                         times: [0, 0.2, 0.5, 0.8, 1],
                     }}
                     viewport={{ once: true }}
-                    // style={{
-                    //     width: '50%',
-                    //     height: '50%',
-                    //     backgroundColor: 'green',
-                    // }}
                 >
                     Hola
-                </motion.button>
+                </motion.div>
             </div>
         </div>
     )

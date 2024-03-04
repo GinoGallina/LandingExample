@@ -6,22 +6,19 @@ import { ReparacionesComponent } from './components/Views/Reparaciones/Reparacio
 import { AccesoriosComponent } from './components/Views/Accesorios/AccesoriosComponent'
 import { NosotrosComponent } from './components/Views/Nosotros/NosotrosComponent'
 import { ContactoComponent } from './components/Views/Contacto/ContactoComponent'
-import { GoodbyeComponent } from './components/Views/Goodbye/GoodbyeComponent'
+import { FooterComponent } from './components/Views/Footer/FooterComponent'
 
 function App() {
     return (
         <>
-            <header>
-                <Navbar></Navbar>
-            </header>
+            <Navbar></Navbar>
             <main className="row mt-3 mx-0 justify-content-center">
                 <InicioComponent></InicioComponent>
                 <ReparacionesComponent></ReparacionesComponent>
                 <NosotrosComponent></NosotrosComponent>
                 <AccesoriosComponent></AccesoriosComponent>
-                <GoodbyeComponent></GoodbyeComponent>
-                <div style={{ height: '100vh' }}></div>
                 <ContactoComponent></ContactoComponent>
+                <FooterComponent></FooterComponent>
             </main>
         </>
     )
