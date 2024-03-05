@@ -15,7 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb'
 import { ThemeProvider } from '@emotion/react'
 import { darkTheme } from '../../../utils/conts'
 
-const pages = ['Products', 'Pricing', 'Blog']
+const pages = ['Inicio', 'Nosotros', 'Reparaciones', 'Accesorios']
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 function Navbar() {

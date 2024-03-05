@@ -18,15 +18,15 @@ export const NosotrosComponent = () => {
             transition={{ duration: 1, ease: 'easeOut' }} // Duración y tipo de transición
             className="col-12 row my-5 px-4"
         >
-            <Card className="d-flex flex-column flex-sm-row p-3 w-100 w-sm-75 my-auto">
+            <Card className="d-flex flex-column flex-md-row p-3 w-100 w-md-75 my-auto">
                 <CardMedia
-                    sx={{ objectFit: 'auto' }}
+                    sx={{ objectFit: 'auto', marginY: 'auto' }}
                     component="img"
                     height="400"
                     image="public\images\a1cd6ea7-0cd7-453a-8e8d-4cd9bbd34c62.jpg" // Reemplaza con la ruta de tu imagen
                     alt="Imagen"
                 />
-                <CardContent className="w-100 w-sm-50 p-4">
+                <CardContent className="w-100 w-md-50 p-4">
                     <Typography variant="h6" style={{ color: '#1976d2' }}>
                         Nosotros
                     </Typography>

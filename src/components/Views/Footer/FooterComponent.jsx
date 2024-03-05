@@ -39,6 +39,7 @@ export const FooterComponent = () => {
                 <AnimatedTypography
                     initial="hidden"
                     whileInView="visible"
+                    viewport={{ amount: 0.8 }}
                     transition={{ delay: 0.3 }}
                     variants={iconVariants}
                     variant="body1"
@@ -55,6 +56,7 @@ export const FooterComponent = () => {
                     <motion.span
                         initial="hidden"
                         whileInView="visible"
+                        viewport={{ amount: 0.8 }}
                         transition={{
                             delay: 0.3,
                             duration: 0.5,
@@ -83,6 +85,7 @@ export const FooterComponent = () => {
                     <motion.span
                         initial="hidden"
                         whileInView="visible"
+                        viewport={{ amount: 0.8 }}
                         transition={{
                             delay: 0.6,
                             duration: 0.5,
@@ -111,6 +114,7 @@ export const FooterComponent = () => {
                     <motion.span
                         initial="hidden"
                         whileInView="visible"
+                        viewport={{ amount: 0.8 }}
                         transition={{
                             delay: 0.9,
                             duration: 0.5,

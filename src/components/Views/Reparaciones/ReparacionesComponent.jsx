@@ -1,15 +1,18 @@
 import { Button, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { CardScrollComponent } from './CardScrollComponent'
 
 export const ReparacionesComponent = () => {
+    const AnimatedButton = motion(Button)
+
     const { ref, inView } = useInView({
         triggerOnce: true, // Para que la animación ocurra solo una vez
         threshold: 0.3, // Umbral de visibilidad (0.5 significa que cuando el 50% del div esté visible)
     })
     return (
-        <div className="col-12 row mt-3" style={{ maxHeight: '500px' }}>
-            <div className="col-12 col-sm-6 p-4">
+        <div className="col-12 row mt-3">
+            <div className="col-12 col-md-6 p-4">
                 <motion.div
                     ref={ref}
                     initial={{ x: -100, opacity: 0 }} // Estado inicial fuera de la pantalla y opacidad 0
@@ -53,106 +56,36 @@ export const ReparacionesComponent = () => {
                         }}
                         className="d-inline-block"
                     >
-                        <Button
+                        <AnimatedButton
                             sx={{ backgroundColor: 'black', color: 'white' }}
                             className="my-3"
                             variant="contained"
+                            initial={{ scale: 1.5 }}
+                            whileInView={{ scale: 1 }}
+                            transition={{
+                                type: 'spring',
+                                stiffness: 400,
+                                damping: 10,
+                            }}
+                            viewport={{ once: true }}
                         >
                             Cotizá!
-                        </Button>
+                        </AnimatedButton>
                     </motion.div>
                 </motion.div>
             </div>
             <div
-                className="col-12 col-sm-6 p-4 "
-                style={{ height: '100%', overflowY: 'auto' }}
+                className="col-12 col-md-6 p-4 border shadow rounded "
+                style={{
+                    // height: '100%',
+                    backgroundImage:
+                        'linear-gradient(to bottom right, #0F3057, #242840)',
+                    maxHeight: '500px',
+                    overflowY: 'auto',
+                    overflowX: 'hidden',
+                }}
             >
-                <motion.p
-                    initial={{ x: 100, opacity: 0 }} // Estado inicial fuera de la pantalla y opacidad 0
-                    animate={{ x: inView ? 0 : 100, opacity: inView ? 1 : 0 }} // Animación de subida y aparición al estar en pantalla
-                    transition={{ duration: 0.5, ease: 'easeOut' }} // Duración y tipo de transición
-                >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae necessitatibus assumenda repellat dignissimos
-                    voluptatibus excepturi, nulla eos vitae neque maiores atque
-                    nobis expedita repellendus hic quae facilis tempore rem
-                    fugiat? Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Facere, voluptatem iste magnam quod officiis modi eius
-                    magni qui laboriosam sint culpa. Reiciendis quaerat,
-                    perspiciatis doloremque similique ab eligendi id itaque?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae necessitatibus assumenda repellat dignissimos
-                    voluptatibus excepturi, nulla eos vitae neque maiores atque
-                    nobis expedita repellendus hic quae facilis tempore rem
-                    fugiat? Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Facere, voluptatem iste magnam quod officiis modi eius
-                    magni qui laboriosam sint culpa. Reiciendis quaerat,
-                    perspiciatis doloremque similique ab eligendi id itaque?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae necessitatibus assumenda repellat dignissimos
-                    voluptatibus excepturi, nulla eos vitae neque maiores atque
-                    nobis expedita repellendus hic quae facilis tempore rem
-                    fugiat? Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Facere, voluptatem iste magnam quod officiis modi eius
-                    magni qui laboriosam sint culpa. Reiciendis quaerat,
-                    perspiciatis doloremque similique ab eligendi id itaque?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae necessitatibus assumenda repellat dignissimos
-                    voluptatibus excepturi, nulla eos vitae neque maiores atque
-                    nobis expedita repellendus hic quae facilis tempore rem
-                    fugiat? Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Facere, voluptatem iste magnam quod officiis modi eius
-                    magni qui laboriosam sint culpa. Reiciendis quaerat,
-                    perspiciatis doloremque similique ab eligendi id itaque?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae necessitatibus assumenda repellat dignissimos
-                    voluptatibus excepturi, nulla eos vitae neque maiores atque
-                    nobis expedita repellendus hic quae facilis tempore rem
-                    fugiat? Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Facere, voluptatem iste magnam quod officiis modi eius
-                    magni qui laboriosam sint culpa. Reiciendis quaerat,
-                    perspiciatis doloremque similique ab eligendi id itaque?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae necessitatibus assumenda repellat dignissimos
-                    voluptatibus excepturi, nulla eos vitae neque maiores atque
-                    nobis expedita repellendus hic quae facilis tempore rem
-                    fugiat? Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Facere, voluptatem iste magnam quod officiis modi eius
-                    magni qui laboriosam sint culpa. Reiciendis quaerat,
-                    perspiciatis doloremque similique ab eligendi id itaque?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae necessitatibus assumenda repellat dignissimos
-                    voluptatibus excepturi, nulla eos vitae neque maiores atque
-                    nobis expedita repellendus hic quae facilis tempore rem
-                    fugiat? Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Facere, voluptatem iste magnam quod officiis modi eius
-                    magni qui laboriosam sint culpa. Reiciendis quaerat,
-                    perspiciatis doloremque similique ab eligendi id itaque?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae necessitatibus assumenda repellat dignissimos
-                    voluptatibus excepturi, nulla eos vitae neque maiores atque
-                    nobis expedita repellendus hic quae facilis tempore rem
-                    fugiat? Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Facere, voluptatem iste magnam quod officiis modi eius
-                    magni qui laboriosam sint culpa. Reiciendis quaerat,
-                    perspiciatis doloremque similique ab eligendi id itaque?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae necessitatibus assumenda repellat dignissimos
-                    voluptatibus excepturi, nulla eos vitae neque maiores atque
-                    nobis expedita repellendus hic quae facilis tempore rem
-                    fugiat? Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Facere, voluptatem iste magnam quod officiis modi eius
-                    magni qui laboriosam sint culpa. Reiciendis quaerat,
-                    perspiciatis doloremque similique ab eligendi id itaque?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae necessitatibus assumenda repellat dignissimos
-                    voluptatibus excepturi, nulla eos vitae neque maiores atque
-                    nobis expedita repellendus hic quae facilis tempore rem
-                    fugiat? Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Facere, voluptatem iste magnam quod officiis modi eius
-                    magni qui laboriosam sint culpa. Reiciendis quaerat,
-                    perspiciatis doloremque similique ab eligendi id itaque?
-                </motion.p>
+                <CardScrollComponent></CardScrollComponent>
             </div>
         </div>
     )

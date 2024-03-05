@@ -13,8 +13,8 @@ export const AccesoriosComponent = () => {
                             transition={{
                                 duration: 0.5,
                                 type: 'spring',
-                                damping: 10,
                                 stiffness: 100,
+                                damping: 20,
                             }} // Efecto de rebote
                             viewport={{ once: true }}
                             className="motion-div d-flex flex-column justify-content-center align-items-center"
