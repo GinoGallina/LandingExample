@@ -8,20 +8,23 @@ import { NosotrosComponent } from './components/Views/Nosotros/NosotrosComponent
 import { ContactoComponent } from './components/Views/Contacto/ContactoComponent'
 import { FooterComponent } from './components/Views/Footer/FooterComponent'
 // import { Test } from './components/test'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
     return (
         <>
             {/* <Test></Test> */}
-            <Navbar></Navbar>
-            <main className="row mt-3 mx-0 justify-content-center">
-                <InicioComponent></InicioComponent>
-                <ReparacionesComponent></ReparacionesComponent>
-                <NosotrosComponent></NosotrosComponent>
-                <AccesoriosComponent></AccesoriosComponent>
-                <ContactoComponent></ContactoComponent>
-                <FooterComponent></FooterComponent>
-            </main>
+            <Router>
+                <Navbar></Navbar>
+                <main className="row mt-3 mx-0 justify-content-center">
+                    <InicioComponent></InicioComponent>
+                    <ReparacionesComponent></ReparacionesComponent>
+                    <NosotrosComponent></NosotrosComponent>
+                    <AccesoriosComponent></AccesoriosComponent>
+                    <ContactoComponent></ContactoComponent>
+                    <FooterComponent></FooterComponent>
+                </main>
+            </Router>
         </>
     )
 }

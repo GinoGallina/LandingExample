@@ -12,6 +12,7 @@ export const NosotrosComponent = () => {
     })
     return (
         <motion.div
+            id="nosotros"
             ref={ref}
             initial={{ y: 100, opacity: 0 }} // Estado inicial fuera de la pantalla y opacidad 0
             animate={{ y: inView ? 0 : 100, opacity: inView ? 1 : 0 }} // Animación de subida y aparición al estar en pantalla

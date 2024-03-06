@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faGithub,
     faLinkedin,
-    faTwitter,
-    faFacebook,
+    // faTwitter,
+    // faFacebook,
     faInstagram,
 } from '@fortawesome/free-brands-svg-icons'
 import { motion } from 'framer-motion'
@@ -45,7 +45,13 @@ export const FooterComponent = () => {
                     variant="body1"
                     sx={{ flexGrow: 1 }}
                 >
-                    Gino Gallina
+                    Gino Gallina, página basada en{' '}
+                    <a
+                        className="text-decoration-none text-white"
+                        href="https://costantinocelulares.com.ar/"
+                    >
+                        https://costantinocelulares.com.ar/
+                    </a>
                 </AnimatedTypography>
                 <div
                     style={{
@@ -131,7 +137,7 @@ export const FooterComponent = () => {
                             }}
                             aria-label="Linkedin"
                             component="a"
-                            href="https://www.facebook.com/tuusuario/"
+                            href="https://www.linkedin.com/in/gino-gallina-205296256/"
                             target="_blank"
                             whileHover="hover"
                             variants={iconVariants}

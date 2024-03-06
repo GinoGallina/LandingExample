@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { ImgCarrousel } from './ImgCarrousell'
 export const InicioComponent = () => {
     return (
-        <div className="inicio col-12 row">
+        <div id="inicio" className="inicio col-12 row">
             <div className="col-12 col-md-6 p-4">
                 <motion.div
                     initial={{ y: 100, opacity: 0 }} // Estado inicial fuera de la pantalla y opacidad 0

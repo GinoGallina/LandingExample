@@ -7,49 +7,56 @@ import Typography from '@mui/material/Typography'
 import Menu from '@mui/material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
-import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
-import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-import AdbIcon from '@mui/icons-material/Adb'
 import { ThemeProvider } from '@emotion/react'
 import { darkTheme } from '../../../utils/conts'
+import { motion } from 'framer-motion'
 
-const pages = ['Inicio', 'Nosotros', 'Reparaciones', 'Accesorios']
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
+const pages = ['Inicio', 'Reparaciones', 'Nosotros', 'Accesorios']
+
+const AnimatedButton = motion(Button)
 
 function Navbar() {
+    const [activePage, setActivePage] = React.useState(0) // Estado para la opción activa
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const sections = pages.map((page) =>
+                document.getElementById(page.toLowerCase()),
+            )
+            const scrollPosition = window.scrollY + window.innerHeight / 2
+            const activeIndex =
+                sections.findIndex(
+                    (section) => section.offsetTop > scrollPosition,
+                ) - 1
+            setActivePage(activeIndex >= 0 ? activeIndex : sections.length - 1)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
     const [anchorElNav, setAnchorElNav] = React.useState(null)
-    const [anchorElUser, setAnchorElUser] = React.useState(null)
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget)
-    }
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget)
     }
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null)
     }
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null)
-    }
-
     return (
         <ThemeProvider theme={darkTheme}>
-            <AppBar position="static">
+            <AppBar position="sticky">
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <AdbIcon
+                        {/* <AdbIcon
                             sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
-                        />
+                        /> */}
                         <Typography
                             variant="h6"
                             noWrap
-                            component="a"
-                            href="#app-bar-with-responsive-menu"
                             sx={{
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
@@ -93,65 +100,71 @@ function Navbar() {
                                 }}
                                 open={Boolean(anchorElNav)}
                                 onClose={handleCloseNavMenu}
-                                sx={{
-                                    display: { xs: 'block', md: 'none' },
-                                }}
+                                sx={{ display: { xs: 'block', md: 'none' } }}
                             >
-                                {pages.map((page) => (
+                                {pages.map((page, index) => (
                                     <MenuItem
-                                        key={page}
+                                        key={index}
                                         onClick={handleCloseNavMenu}
                                     >
-                                        <Typography textAlign="center">
-                                            {page}
-                                        </Typography>
+                                        <a
+                                            href={`#${page.toLowerCase()}`}
+                                            style={{
+                                                textDecoration: 'none',
+                                                color: 'inherit',
+                                            }}
+                                        >
+                                            <Typography textAlign="center">
+                                                {page}
+                                            </Typography>
+                                        </a>
                                     </MenuItem>
                                 ))}
                             </Menu>
                         </Box>
-                        <AdbIcon
-                            sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
-                        />
-                        <Typography
-                            variant="h5"
-                            noWrap
-                            component="a"
-                            href="#app-bar-with-responsive-menu"
-                            sx={{
-                                mr: 2,
-                                display: { xs: 'flex', md: 'none' },
-                                flexGrow: 1,
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                letterSpacing: '.3rem',
-                                color: 'inherit',
-                                textDecoration: 'none',
-                            }}
-                        >
-                            LOGO
-                        </Typography>
+
                         <Box
                             sx={{
                                 flexGrow: 1,
-                                display: { xs: 'none', md: 'flex' },
+                                display: {
+                                    xs: 'none',
+                                    md: 'flex',
+                                },
+                                justifyContent: 'flex-end',
                             }}
                         >
-                            {pages.map((page) => (
-                                <Button
-                                    key={page}
-                                    onClick={handleCloseNavMenu}
+                            {pages.map((page, index) => (
+                                <AnimatedButton
+                                    key={index}
+                                    href={`#${page.toLowerCase()}`}
                                     sx={{
                                         my: 2,
                                         color: 'white',
                                         display: 'block',
+                                        position: 'relative',
                                     }}
                                 >
                                     {page}
-                                </Button>
+                                    {activePage == index ? (
+                                        <motion.div
+                                            layoutId="underline"
+                                            className="position-absolute"
+                                            style={{
+                                                bottom: '-5',
+                                                left: '0',
+                                                right: '0',
+                                                height: '1px',
+                                                backgroundColor: 'white',
+                                            }}
+                                        >
+                                            <span></span>
+                                        </motion.div>
+                                    ) : null}
+                                </AnimatedButton>
                             ))}
                         </Box>
 
-                        <Box sx={{ flexGrow: 0 }}>
+                        {/* <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
                                 <IconButton
                                     onClick={handleOpenUserMenu}
@@ -179,9 +192,9 @@ function Navbar() {
                                 open={Boolean(anchorElUser)}
                                 onClose={handleCloseUserMenu}
                             >
-                                {settings.map((setting) => (
+                                {settings.map((setting, index) => (
                                     <MenuItem
-                                        key={setting}
+                                        key={index}
                                         onClick={handleCloseUserMenu}
                                     >
                                         <Typography textAlign="center">
@@ -190,7 +203,7 @@ function Navbar() {
                                     </MenuItem>
                                 ))}
                             </Menu>
-                        </Box>
+                        </Box> */}
                     </Toolbar>
                 </Container>
             </AppBar>

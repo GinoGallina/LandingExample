@@ -8,6 +8,10 @@ body{
   min-height: 100vh;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .contenedor {
     position: relative;
     height: 250px; /* Altura deseada */

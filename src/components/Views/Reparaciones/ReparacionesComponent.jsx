@@ -11,7 +11,7 @@ export const ReparacionesComponent = () => {
         threshold: 0.3, // Umbral de visibilidad (0.5 significa que cuando el 50% del div esté visible)
     })
     return (
-        <div className="col-12 row mt-3">
+        <div id="reparaciones" className="col-12 row mt-3">
             <div className="col-12 col-md-6 p-4">
                 <motion.div
                     ref={ref}

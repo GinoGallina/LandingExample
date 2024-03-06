@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 export const AccesoriosComponent = () => {
     return (
         <>
-            <div className="contenedor col-12 mt-4">
+            <div id="accesorios" className="contenedor col-12 mt-4">
                 <div className="imagen ">
                     <div className="oscurecer ">
                         <motion.div
