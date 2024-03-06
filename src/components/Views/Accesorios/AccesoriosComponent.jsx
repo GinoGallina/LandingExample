@@ -5,7 +5,12 @@ export const AccesoriosComponent = () => {
     return (
         <>
             <div id="accesorios" className="contenedor col-12 mt-4">
-                <div className="imagen ">
+                <div
+                    className="imagen "
+                    // style={{
+                    //     backgroundImage: 'public/images/unnamed.jpg !important',
+                    // }}
+                >
                     <div className="oscurecer ">
                         <motion.div
                             initial={{ scale: 0, opacity: 0 }}
