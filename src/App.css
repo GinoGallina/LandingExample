@@ -23,7 +23,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('public/Images/unnamed.jpg');
+  background-image: url('public/images/unnamed.jpg');
   background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el contenedor */
   background-attachment: fixed; /* Fija la imagen de fondo */
 }
