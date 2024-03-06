@@ -34,7 +34,7 @@ export const Test = () => {
                     className="col-12"
                     style={{ overflow: 'auto', width: '50%' }}
                 >
-                    <img src="public\images\unnamed.jpg" alt="" />
+                    <img src="public\Images\unnamed.jpg" alt="" />
                 </div>
             </div>
             <div className="row">

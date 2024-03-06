@@ -24,7 +24,7 @@ export const NosotrosComponent = () => {
                     sx={{ objectFit: 'auto', marginY: 'auto' }}
                     component="img"
                     height="400"
-                    image="public\images\a1cd6ea7-0cd7-453a-8e8d-4cd9bbd34c62.jpg" // Reemplaza con la ruta de tu imagen
+                    image="public\Images\a1cd6ea7-0cd7-453a-8e8d-4cd9bbd34c62.jpg" // Reemplaza con la ruta de tu imagen
                     alt="Imagen"
                 />
                 <CardContent className="w-100 w-md-50 p-4">
